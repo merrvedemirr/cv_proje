@@ -1,0 +1,74 @@
+{
+    "contact": {
+        "name": "905425610279 (Mobile)",
+        "email": "hande1977@gmail.com",
+        "phone": "905425610279",
+        "linkedin": "www.linkedin.com/in/handedaghan"
+    },
+    "experience": [
+        {
+            "position": "Finance Manager",
+            "company": "Intellica",
+            "start": "March 2016",
+            "end": "Present",
+            "duration": "9 years 1 month",
+            "match": {
+                "alternate_title": "Finance Manager",
+                "onet_soc_code": "11-3031.00"
+            },
+            "score": 1.0
+        },
+        {
+            "position": "Supervisor of Support Team & Finance Analyst",
+            "company": "Turkcell",
+            "start": "December 2011",
+            "end": "April 2015",
+            "duration": "3 years 5 months",
+            "match": {
+                "alternate_title": "Finance Specialist",
+                "onet_soc_code": "43-3051.00"
+            },
+            "score": 0.7803999781608582
+        },
+        {
+            "position": "Senior Finance Analyst (AP & AR)",
+            "company": "Vodafone",
+            "start": "June 2004",
+            "end": "December 2011",
+            "duration": "7 years 7 months",
+            "match": {
+                "alternate_title": "Finance Analyst",
+                "onet_soc_code": "13-2051.00"
+            },
+            "score": 0.8216000199317932
+        },
+        {
+            "position": "Financial Control Senior Analyst",
+            "company": "Vodafone",
+            "start": "May 2003",
+            "end": "June 2004",
+            "duration": "1 year 2 months",
+            "match": {
+                "alternate_title": "Financial Management Analyst",
+                "onet_soc_code": "13-2031.00"
+            },
+            "score": 0.8339999914169312
+        },
+        {
+            "position": "Treasury Analyst",
+            "company": "Vodafone",
+            "start": "January 2001",
+            "end": "May 2003",
+            "duration": "2 years 5 months",
+            "match": {
+                "alternate_title": "Treasury Analyst",
+                "onet_soc_code": "13-2051.00"
+            },
+            "score": 1.0
+        }
+    ],
+    "total_experience": {
+        "years": 23,
+        "months": 8
+    }
+}
