@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Özgeçmiş Analiz Raporu</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body { background-color: #f8f9fa; }
+        .section-title { font-size: 1.5rem; font-weight: bold; margin-top: 30px; }
+        .info-box { background: white; padding: 20px; border-radius: 10px; margin-bottom: 30px; box-shadow: 0 0 10px rgba(0,0,0,0.05); }
+        img.chart { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 8px; padding: 5px; background-color: white; }
+    </style>
+</head>
+<body>
+<div class="container py-5">
+
+    <h1 class="text-center mb-4">📄 Özgeçmiş Analiz Raporu</h1>
+
+    <!-- KİŞİSEL BİLGİ -->
+    <div class="info-box">
+        <h2 class="section-title">👤 Kişisel Bilgiler</h2>
+        <p><strong>İsim:</strong> {{ data.contact.name }}</p>
+        <p><strong>E-posta:</strong> {{ data.contact.email }}</p>
+        <p><strong>Telefon:</strong> {{ data.contact.phone }}</p>
+        <p><strong>LinkedIn:</strong> <a href="{{ data.contact.linkedin }}" target="_blank">{{ data.contact.linkedin }}</a></p>
+    </div>
+
+    <!-- DENEYİMLER -->
+    <div class="info-box">
+        <h2 class="section-title">🏢 İş Deneyimi</h2>
+        {% for exp in data.experience %}
+            <p><strong>{{ exp.position }}</strong> @ {{ exp.company }} <br>
+                <em>{{ exp.start }} - {{ exp.end }} ({{ exp.duration }})</em><br>
+                {% if exp.match %}
+                Matched as: <strong>{{ exp.match.alternate_title }}</strong> ({{ exp.match.onet_soc_code }}, Benzerlik: {{ exp.score|round(4) }})
+                {% endif %}
+            </p>
+            <hr>
+        {% endfor %}
+    </div>
+
+    <!-- TOPLAM SÜRE -->
+    <div class="info-box">
+        <h2 class="section-title">⏳ Toplam Deneyim</h2>
+        <p>{{ data.total_experience.years }} yıl {{ data.total_experience.months }} ay</p>
+    </div>
+
+    <!-- GRAFİKLER -->
+    <div class="info-box">
+        <h2 class="section-title">📊 Grafikler</h2>
+    
+        <div class="row">
+        <div class="col-md-6">
+            <div class="shadow p-3 mb-4 bg-white rounded" style="box-shadow: 0 10px 24px rgba(0,0,0,0.15); border-radius: 20px;">
+            <iframe src="{{ url_for('static', filename='charts_html/matched.html') }}" width="100%" height="500" frameborder="0" style="border-radius: 12px;"></iframe>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="shadow p-3 mb-4 bg-white rounded" style="box-shadow: 0 10px 24px rgba(0,0,0,0.15); border-radius: 20px;">
+            <iframe src="{{ url_for('static', filename='charts_html/career.html') }}" width="100%" height="500" frameborder="0" style="border-radius: 12px;"></iframe>
+            </div>
+        </div>
+        </div>
+    
+        <div class="row">
+        <div class="col-md-6">
+            <div class="shadow p-3 mb-4 bg-white rounded" style="box-shadow: 0 10px 24px rgba(0,0,0,0.15); border-radius: 20px;">
+            <iframe src="{{ url_for('static', filename='charts_html/company.html') }}" width="100%" height="500" frameborder="0" style="border-radius: 12px;"></iframe>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="shadow p-3 mb-4 bg-white rounded" style="box-shadow: 0 10px 24px rgba(0,0,0,0.15); border-radius: 20px;">
+            <iframe src="{{ url_for('static', filename='charts_html/onet.html') }}" width="100%" height="500" frameborder="0" style="border-radius: 12px;"></iframe>
+            </div>
+        </div>
+        </div>
+    </div>
+  
+  
+      
+</div>
+</body>
+</html>
+
+
+    
